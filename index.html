@@ -82,6 +82,17 @@
   }
   .brand-mark::before{ top:-3px; left:-3px; border-right:0; border-bottom:0; }
   .brand-mark::after{ bottom:-3px; right:-3px; border-left:0; border-top:0; }
+  .brand-pulse{
+    position:absolute; top:-3px; right:-3px;
+    width:6px; height:6px;
+    background:var(--signal); border-radius:50%;
+    animation:brandPulse 2.4s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes brandPulse{
+    0%, 100%{ transform:scale(1); opacity:.85; }
+    50%{ transform:scale(1.8); opacity:.2; }
+  }
   .brand-tip{
     position:absolute; top:40px; left:50%;
     transform:translate(-50%,-4px);
@@ -249,6 +260,7 @@
     <div class="brand">
       <a class="brand-mark" href="resume.pdf" target="_blank" rel="noopener" aria-label="View resume PDF">
         SM
+        <span class="brand-pulse"></span>
         <span class="brand-tip">[ resume.pdf ]</span>
       </a>
       Shrish Mahesh
