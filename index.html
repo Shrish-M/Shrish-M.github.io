@@ -40,6 +40,7 @@
   a:hover{text-decoration:underline;}
   .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
 
+  /* ---------- Nav ---------- */
   header.nav{
     position:sticky; top:0; z-index:50;
     background:rgba(245,244,239,0.92);
@@ -62,47 +63,13 @@
     border-radius:4px;
     display:flex; align-items:center; justify-content:center;
     font-family:var(--font-mono); font-size:12px; font-weight:500;
-    color:inherit; text-decoration:none;
-    cursor:pointer;
-    transition:transform .18s ease, border-color .18s ease;
-  }
-  .brand-mark:hover{
-    transform:scale(1.1) rotate(-2deg);
-    border-color:var(--signal);
-    text-decoration:none;
-  }
-  .brand-mark:hover::before, .brand-mark:hover::after{
-    border-color:var(--signal);
-    width:9px; height:9px;
   }
   .brand-mark::before, .brand-mark::after{
     content:''; position:absolute; width:6px; height:6px;
     border:1.5px solid var(--accent-ink);
-    transition:all .18s ease;
   }
   .brand-mark::before{ top:-3px; left:-3px; border-right:0; border-bottom:0; }
   .brand-mark::after{ bottom:-3px; right:-3px; border-left:0; border-top:0; }
-  .brand-pulse{
-    position:absolute; top:-3px; right:-3px;
-    width:6px; height:6px;
-    background:var(--signal); border-radius:50%;
-    animation:brandPulse 2.4s ease-in-out infinite;
-    pointer-events:none;
-  }
-  @keyframes brandPulse{
-    0%, 100%{ transform:scale(1); opacity:.85; }
-    50%{ transform:scale(1.8); opacity:.2; }
-  }
-  .brand-tip{
-    position:absolute; top:40px; left:50%;
-    transform:translate(-50%,-4px);
-    font-family:var(--font-mono); font-size:10.5px; color:var(--ink-soft);
-    background:var(--surface); border:1px solid var(--line-strong); border-radius:6px;
-    padding:4px 9px; white-space:nowrap;
-    opacity:0; pointer-events:none;
-    transition:opacity .18s ease, transform .18s ease;
-  }
-  .brand-mark:hover .brand-tip{ opacity:1; transform:translate(-50%,0); }
   nav.links{ display:flex; gap:4px; align-items:center; }
   nav.links button{
     font-family:var(--font-body); font-size:14.5px; font-weight:500;
@@ -121,6 +88,7 @@
   }
   .nav-cta:hover{ background:var(--ink); color:var(--paper) !important; text-decoration:none; }
 
+  /* ---------- Sections / pages ---------- */
   .page{ display:none; padding:64px 0 96px; }
   .page.active{ display:block; }
 
@@ -148,6 +116,7 @@
     font-size:18px; color:var(--ink-soft); max-width:600px; margin:0 0 36px;
   }
 
+  /* corner-bracket annotation frame, used as the signature element */
   .frame{
     position:relative;
     border:1px solid var(--line-strong);
@@ -164,6 +133,7 @@
     font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint);
   }
 
+  /* ---------- Home ---------- */
   .hero-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:32px; flex-wrap:wrap; }
   .hero-meta{ display:flex; flex-direction:column; gap:10px; margin-top:6px; min-width:180px; }
   .hero-meta .row{ font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft); }
@@ -193,6 +163,7 @@
   .exp-preview-item .role{ font-weight:500; font-size:15px; }
   .exp-preview-item .org{ font-size:13.5px; color:var(--ink-soft); }
 
+  /* ---------- Projects page ---------- */
   .project{ padding:28px; margin-bottom:24px; }
   .project-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; margin-bottom:14px; }
   .project-head h3{ font-family:var(--font-display); font-size:22px; font-weight:600; margin:0 0 6px; }
@@ -214,6 +185,7 @@
     border:1px solid var(--line); padding:4px 9px; border-radius:6px; color:var(--ink-soft);
   }
 
+  /* ---------- Experience page ---------- */
   .timeline{ position:relative; margin-top:8px; }
   .tl-item{ display:grid; grid-template-columns:110px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid var(--line); }
   .tl-item:first-child{ padding-top:0; }
@@ -227,6 +199,7 @@
   .tl-item li:last-child{ margin-bottom:0; }
   .tl-item li::marker{ color:var(--ink-faint); }
 
+  /* ---------- Contact page ---------- */
   .contact-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:28px; align-items:start; }
   .contact-card{ padding:28px; }
   .contact-row{
@@ -258,11 +231,7 @@
 <header class="nav">
   <div class="nav-inner">
     <div class="brand">
-      <a class="brand-mark" href="resume.pdf" target="_blank" rel="noopener" aria-label="View resume PDF">
-        SM
-        <span class="brand-pulse"></span>
-        <span class="brand-tip">[ resume.pdf ]</span>
-      </a>
+      <div class="brand-mark">SM</div>
       Shrish Mahesh
     </div>
     <nav class="links" id="navLinks">
@@ -271,17 +240,19 @@
       <button data-page="experience">Experience</button>
       <button data-page="contact">Contact</button>
     </nav>
+    <a class="nav-cta" href="mailto:mahesh49@purdue.edu">Email me</a>
   </div>
 </header>
 
+<!-- ============ HOME ============ -->
 <main class="wrap">
 <section class="page active" id="page-home">
 
   <div class="hero-top">
     <div style="max-width:560px;">
       <span class="eyebrow">◆ Purdue &middot; CS + Math &middot; Class of 2027</span>
-      <h1>Interning at SAP, researching robotics at IDEAS Lab.</h1>
-      <p class="lede">Most of my internships and projects have been applied AI and backend systems work. I'm currently working on robotics research at Purdue, exploring how VLMs are used for robotic manipulation.</p>
+      <h1>SAP Intern, robotics .</h1>
+      <p class="lede">I've worked on applied AI in my experiences and projects, traditional backend systems, and am currently doing research in robotics as well.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <a class="nav-cta" href="mailto:mahesh49@purdue.edu" style="background:var(--ink); color:var(--paper) !important;">Get in touch</a>
         <button onclick="goTo('projects')" class="nav-cta" style="cursor:pointer;">See projects</button>
@@ -336,6 +307,7 @@
 
 </section>
 
+<!-- ============ PROJECTS ============ -->
 <section class="page" id="page-projects">
   <h2 class="section-title">Projects</h2>
   <p class="section-sub">Independent and hackathon work, outside of internships and lab research.</p>
@@ -376,8 +348,22 @@
     </div>
   </div>
 
+  <div class="frame project">
+    <div class="project-head">
+      <div>
+        <h3>Visual Interactive Manipulation for Robots</h3>
+        <div class="role">IEEE RA-L submission &middot; IDEAS Lab, Purdue &middot; Nov 2025 &ndash; Present</div>
+      </div>
+    </div>
+    <p class="desc">Co-authored paper on VLM-based grasp affordance labeling. My contributions: point cloud preprocessing pipelines and benchmarking existing grasp pose generators, plus labeling 2,000+ of the 10,000 images in the affordance dataset used to train the VLM.</p>
+    <div class="stack-row">
+      <span class="chip">Point cloud processing</span><span class="chip">VLM data pipelines</span><span class="chip">Grasp pose benchmarking</span>
+    </div>
+  </div>
+
 </section>
 
+<!-- ============ EXPERIENCE ============ -->
 <section class="page" id="page-experience">
   <h2 class="section-title">Experience</h2>
   <p class="section-sub">Internships, research, and teaching, most recent first.</p>
@@ -392,9 +378,9 @@
         <div class="tl-org">SAP <span>&middot; San Ramon, CA</span></div>
         <ul>
           <li>Designed an API observability dashboard tracking usage trends, per-customer breakdowns, resource-intensive endpoints, and failure modes.</li>
-          <li>Refactored 54 Playwright UI automation tests and found 4 critical UI defects, cutting flaky failures and raising pre-release confidence.</li>
+          <li>Overhauled 54 Playwright UI automation test cases to eliminate flaky failures, enabling the suite to catch 4 critical UI defects introduced by later UI changes</li>
+	   <li>Documented common playwright test failure modes and wrote an auto-triggering Claude Code skill that enables Claude to avoid these pitfalls for future developers writing tests.</li>
           <li>Traced configuration-driven test failures that had persisted for months, using AI-assisted code exploration to navigate an unfamiliar codebase down to the instance-level config change causing them.</li>
-          <li>Built an automation script to resolve these configuration issues going forward, removing the need for manual intervention.</li>
         </ul>
       </div>
     </div>
@@ -407,7 +393,7 @@
         <ul>
           <li>Built preprocessing pipelines to clean and convert point cloud datasets, and benchmarked existing grasp pose generation methods against the lab's approach.</li>
           <li>Labeled 2,000+ images contributing to a 10,000-image grasp affordance dataset used to train a VLM for automated grasp labeling.</li>
-          <li>Co-authored and submitted a paper on the lab's VLM-based grasp affordance labeling approach.</li>
+          <li>Co-authored a resulting paper, Visual Interactive Manipulation for Robots, submitted to IEEE RA-L.</li>
         </ul>
       </div>
     </div>
@@ -431,10 +417,9 @@
         <h3 class="tl-role">Sub-team Lead, Open Source LLM Tutor</h3>
         <div class="tl-org">Purdue Vertically Integrated Projects <span>&middot; West Lafayette, IN</span></div>
         <ul>
-          <li>Led a sub-team of 8 building a RAG-enhanced LLM tutor for a Python data science course, using open-source LLMs.</li>
-          <li>Evaluated 5 open-source models on their ability to answer queries from a shared knowledge base, and built a PDF parsing pipeline with GPT-4o-mini reformatting the chunked output.</li>
-          <li>Built text- and image-based retrieval pipelines feeding an LLM/VLM, with the image-based approach retrieving 50% more relevant documents.</li>
-          <li>Integrated the OpenAI API for diagram generation and multimodal input, and built a CoT-based planning tool that routes requests to the right tool and confirms with the user before executing.</li>
+          <li>Led a sub-team of 8 building a RAG-enhanced LLM tutor for a data science course, using open-source models.</li>
+          <li>Evaluated 5 open-source models on QA performance and built PDF parsing and reformatting pipelines.</li>
+          <li>Built text and image retrieval pipelines and a CoT-based planning tool that routes user requests to the right tool and asks for confirmation before executing.</li>
         </ul>
       </div>
     </div>
@@ -451,28 +436,14 @@
     </div>
 
     <div class="tl-item">
-      <div class="tl-when">AUG 2024 &ndash;<br>MAY 2025</div>
-      <div>
-        <h3 class="tl-role">Undergraduate Data Science Researcher</h3>
-        <div class="tl-org">The Data Mine, Purdue University <span>&middot; West Lafayette, IN</span></div>
-        <ul>
-          <li>Collaborated with PepsiCo to build a data dashboard tracking environmental concerns across PepsiCo plants, following an Agile process with biweekly sprint reports and weekly standups.</li>
-          <li>Used the Django REST framework to source climate, water quality, and weather data from NOAA, USGS, and NWS.</li>
-          <li>Built a FastAPI web-scraping API to pull and display monthly climate metrics, including historical data used to inform forecasts.</li>
-          <li>Cleaned and restructured the data feeding a Power BI dashboard covering 16 site locations across all collected metrics.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tl-item">
       <div class="tl-when">MAY &ndash; JUN<br>2024</div>
       <div>
         <h3 class="tl-role">Machine Learning Intern</h3>
         <div class="tl-org">United Overseas Bank <span>&middot; Bangkok, Thailand</span></div>
         <ul>
-          <li>Cleaned a 1M+ record dataset and applied SMOTE upsampling to correct a 70-30 class imbalance, curating data for a promotional cross-selling campaign.</li>
-          <li>Evaluated multiple classification models (XGBoost, Decision Tree, and Random Forest) and tuned hyperparameters to find the best fit for the campaign, improving recall by 50% and producing a deployment-ready model.</li>
-          <li>Built 10 case-appropriate visualizations (Sankey diagrams, bar charts, heatmaps) in Plotly and Matplotlib to present cross-selling insights and campaign recommendations to stakeholders.</li>
+          <li>Cleaned a 1M+ record dataset and applied SMOTE upsampling to correct a 70-30 class imbalance.</li>
+          <li>Deployed XGBoost and Random Forest models to identify cross-selling opportunities, improving recall by 50% through hyperparameter tuning.</li>
+          <li>Built 10 visualizations in Plotly and Matplotlib to communicate cross-selling patterns to stakeholders.</li>
         </ul>
       </div>
     </div>
@@ -481,9 +452,10 @@
   </div>
 </section>
 
+<!-- ============ CONTACT ============ -->
 <section class="page" id="page-contact">
   <h2 class="section-title">Contact</h2>
-  <p class="section-sub">Open to full-time software engineering roles, ideally with AI or robotics work involved.</p>
+  <p class="section-sub">Looking for full-time roles in applied AI, backend systems, and robotics.</p>
 
   <div class="contact-grid">
     <div class="frame contact-card">
@@ -521,10 +493,13 @@
       b.classList.toggle('active', b.dataset.page === pageId);
     });
     window.scrollTo({top:0, behavior:'instant'});
+    history.replaceState(null, '', '#' + pageId);
   }
   document.querySelectorAll('nav.links button').forEach(function(b){
     b.addEventListener('click', function(){ goTo(b.dataset.page); });
   });
+  var initial = (location.hash || '#home').replace('#','');
+  if(document.getElementById('page-' + initial)){ goTo(initial); }
 </script>
 
 </body>
