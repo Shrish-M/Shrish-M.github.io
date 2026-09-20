@@ -39,7 +39,7 @@
   a{color:var(--signal-ink); text-decoration:none;}
   a:hover{text-decoration:underline;}
   .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
-
+ 
   header.nav{
     position:sticky; top:0; z-index:50;
     background:rgba(245,244,239,0.92);
@@ -120,10 +120,10 @@
     white-space:nowrap;
   }
   .nav-cta:hover{ background:var(--ink); color:var(--paper) !important; text-decoration:none; }
-
+ 
   .page{ display:none; padding:64px 0 96px; }
   .page.active{ display:block; }
-
+ 
   .eyebrow{
     font-family:var(--font-mono); font-size:12.5px; color:var(--accent-ink);
     background:rgba(199,244,100,0.35);
@@ -147,7 +147,7 @@
   .lede{
     font-size:18px; color:var(--ink-soft); max-width:600px; margin:0 0 36px;
   }
-
+ 
   .frame{
     position:relative;
     border:1px solid var(--line-strong);
@@ -163,12 +163,12 @@
   .tag{
     font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint);
   }
-
+ 
   .hero-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:32px; flex-wrap:wrap; }
   .hero-meta{ display:flex; flex-direction:column; gap:10px; margin-top:6px; min-width:180px; }
   .hero-meta .row{ font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft); }
   .hero-meta .row b{ color:var(--ink); font-weight:500; }
-
+ 
   .home-block{ margin-bottom:52px; }
   .home-block-head{
     display:flex; justify-content:space-between; align-items:baseline;
@@ -176,14 +176,14 @@
   }
   .home-block-head h3{ font-family:var(--font-display); font-size:18px; font-weight:600; margin:0; }
   .see-all{ font-family:var(--font-mono); font-size:12.5px; }
-
+ 
   .preview-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
   .preview-card{ padding:20px; cursor:pointer; transition:border-color .15s, transform .15s; }
   .preview-card:hover{ border-color:var(--ink); transform:translateY(-2px); }
   .preview-card .tag{ display:block; margin-bottom:10px; }
   .preview-card h4{ font-family:var(--font-display); font-size:16.5px; margin:0 0 8px; font-weight:600; }
   .preview-card p{ font-size:13.5px; color:var(--ink-soft); margin:0; line-height:1.55; }
-
+ 
   .exp-preview-item{
     display:grid; grid-template-columns:100px 1fr; gap:18px;
     padding:16px 0; border-bottom:1px solid var(--line);
@@ -192,11 +192,26 @@
   .exp-preview-item .when{ font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); padding-top:2px; }
   .exp-preview-item .role{ font-weight:500; font-size:15px; }
   .exp-preview-item .org{ font-size:13.5px; color:var(--ink-soft); }
-
+ 
   .project{ padding:28px; margin-bottom:24px; }
   .project-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; margin-bottom:14px; }
   .project-head h3{ font-family:var(--font-display); font-size:22px; font-weight:600; margin:0 0 6px; }
   .project-head .role{ font-size:13.5px; color:var(--ink-soft); }
+  .project-links{ display:flex; gap:8px; margin-bottom:14px; }
+  .link-chip{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--ink-soft);
+    border:1px solid var(--line-strong); border-radius:6px;
+    padding:4px 10px; display:inline-flex; align-items:center; gap:4px;
+    text-decoration:none; transition:border-color .15s, color .15s;
+  }
+  .link-chip:hover{ border-color:var(--ink); color:var(--ink); text-decoration:none; }
+ 
+  .course-grid{ display:flex; flex-wrap:wrap; gap:8px; }
+  .course-chip{
+    font-family:var(--font-mono); font-size:12px; color:var(--ink-soft);
+    background:var(--surface); border:1px solid var(--line-strong);
+    border-radius:6px; padding:6px 12px;
+  }
   .project-award{
     font-family:var(--font-mono); font-size:11.5px; color:var(--accent-ink);
     background:rgba(199,244,100,0.35); padding:4px 10px; border-radius:20px; white-space:nowrap;
@@ -213,7 +228,7 @@
     font-family:var(--font-mono); font-size:11.5px; background:var(--paper);
     border:1px solid var(--line); padding:4px 9px; border-radius:6px; color:var(--ink-soft);
   }
-
+ 
   .timeline{ position:relative; margin-top:8px; }
   .tl-item{ display:grid; grid-template-columns:110px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid var(--line); }
   .tl-item:first-child{ padding-top:0; }
@@ -226,7 +241,7 @@
   .tl-item li{ font-size:14px; color:var(--ink-soft); margin-bottom:7px; line-height:1.55; }
   .tl-item li:last-child{ margin-bottom:0; }
   .tl-item li::marker{ color:var(--ink-faint); }
-
+ 
   .contact-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:28px; align-items:start; }
   .contact-card{ padding:28px; }
   .contact-row{
@@ -239,11 +254,11 @@
   .note-card{ padding:24px; }
   .note-card p{ font-size:14px; color:var(--ink-soft); margin:0 0 12px; }
   .note-card p:last-child{ margin-bottom:0; }
-
+ 
   footer{ border-top:1px solid var(--line); padding:26px 0; }
   footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
   footer .tag{ font-size:12px; }
-
+ 
   @media (max-width:720px){
     h1{ font-size:34px; }
     .preview-grid{ grid-template-columns:1fr; }
@@ -331,6 +346,22 @@
         <div class="when">MAY &ndash; AUG<br>2025</div>
         <div><div class="role">Artificial Intelligence Intern</div><div class="org">Tata Communications, Chennai</div></div>
       </div>
+    </div>
+  </div>
+
+  <div class="home-block">
+    <div class="home-block-head">
+      <h3>Relevant coursework</h3>
+    </div>
+    <div class="course-grid">
+      <span class="course-chip">Probability</span>
+      <span class="course-chip">Abstract Algebra</span>
+      <span class="course-chip">Real Analysis</span>
+      <span class="course-chip">Statistical Theory</span>
+      <span class="course-chip">Machine Learning</span>
+      <span class="course-chip">Computer Networks</span>
+      <span class="course-chip">Distributed Systems</span>
+      <span class="course-chip">Robotics (Sequential Estimation)</span>
     </div>
   </div>
 
