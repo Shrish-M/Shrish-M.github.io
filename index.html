@@ -363,14 +363,18 @@
       <h3>Relevant coursework</h3>
     </div>
     <div class="course-grid">
+	  <span class="course-chip">Robotics</span>
+	  <span class="course-chip">Machine Learning</span>
+	  <span class="course-chip">Analysis of Algorithms</span>
+	  <span class="course-chip">Linear Algebra I & II</span>
       <span class="course-chip">Probability</span>
       <span class="course-chip">Abstract Algebra</span>
       <span class="course-chip">Real Analysis</span>
       <span class="course-chip">Statistical Theory</span>
-      <span class="course-chip">Machine Learning</span>
+	  <span class="course-chip">Systems Programming</span>
       <span class="course-chip">Computer Networks</span>
-      <span class="course-chip">Distributed Systems</span>
-      <span class="course-chip">Robotics (Sequential Estimation)</span>
+	  <span class="course-chip">Computer Architecture</span>
+	  <span class="course-chip">Data Structures and Algorithms</span>
     </div>
   </div>
 
@@ -409,12 +413,13 @@
       </div>
     </div>
     <div class="project-links">
-      <a class="link-chip" href="https://github.com/Shrish-M/congestionml" target="_blank" rel="noopener">[ GitHub &#8599; ]</a>
+      <a class="link-chip" href="https://github.com/fishy15/cs536-assign2" target="_blank" rel="noopener">[ GitHub &#8599; ]</a>
+	  <a class="link-chip" href="https://github.com/fishy15/cs536-assign3" target="_blank" rel="noopener">[ GitHub &#8599; ]</a>
     </div>
     <p class="desc">A TCP congestion control algorithm learned from network telemetry instead of hand-tuned heuristics. Parsed the Linux kernel's tcp_info struct directly via getsockopt to compute per-interval goodput, RTT, and retransmit deltas from Dockerized iperf3 runs across 10+ remote servers, trained a RidgeCV model to learn window-adjustment policies from that data, and implemented the resulting logic as a custom eBPF congestion control algorithm in the kernel.</p>
     <div class="metric-row">
-      <div class="metric">Higher mean throughput than TCP Reno and Cubic across 3 public test servers</div>
-      <div class="metric">Fewer packet losses than TCP Reno</div>
+      <div class="metric">Higher mean throughput (38Mbps) than TCP Reno (34Mbps) and Cubic (37Mbps) across 3 public test servers</div>
+      <div class="metric">Lower mean RTT (136ms) and fewer mean packet losses (5 retransmissions) than TCP Reno (139ms RTT, 7 retransmissions)</div>
     </div>
     <div class="stack-row">
       <span class="chip">Python</span><span class="chip">C</span><span class="chip">eBPF</span>
